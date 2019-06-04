@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+            .keyword{
+            color: red;
+            }
+
+
+    </style>
+</head>
+<body>
+<table>
+    {% for dict_item in dict_list %}
+        <tr>
+            <td>{{ dict_item.title |safe}}{{ dict_item.publish_time}}</td>
+            <td>{{ dict_item.con }}</td>
+        </tr>
+{% endfor %}
+
+
+</table>
+
+
+
+</body>
+</html>
