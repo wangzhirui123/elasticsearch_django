@@ -21,6 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',TemplateView.as_view(template_name="index.html"),name="index"),
     url(r'^search/$', views.search_datas),
-    url(r'^results/$', views.results_data),
+    url(r'^index_1/$', views.results_data),
 
     ]

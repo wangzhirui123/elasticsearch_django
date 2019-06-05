@@ -37,16 +37,18 @@ def results_data(req):
 
     response = Clent.search(
         index='yuncai',
-        doc_type='labor',
+        # doc_type='labor',
         body={
             "query":{
                 "multi_match":{
                     "query":key_word,
-                    "fields":['title','con'],
+                    "fields":['title^8','con'],
                 }
             },
+
+
             "from":0,
-            "size":30,
+            "size":19,
             "highlight":{
                     "pre_tags":['<span class="keyword">'],
                     "post_tags":['</span>'],
@@ -70,7 +72,7 @@ def results_data(req):
         his_dict['con'] = his['_source']['con']
         his_dict['publish_time'] = his['_source']['publish_time'][:10]
         his_list.append(his_dict)
-    return render(req,'result.html',{"dict_list":his_list,"total_nums":total_nums})
+    return render(req,'index_1.html',{"dict_list":his_list,"total_nums":total_nums})
 
 
 
