@@ -41,17 +41,21 @@ function insertContent(content) {
             this.className = 'mouseOut';
         };
         //td.onclick = function() {
-            //document.getElementById("keyword").value="123";
-            //alert('1')
+        //    document.getElementById("keyword").value=value;
+        //    alert(value);
         //};
-        //var h = document.createElement('em');
+        var h = document.createElement('em');
         var text = document.createTextNode(value);
         //console.log(text);
         td.appendChild(text);
         tr.appendChild(td);
         document.getElementById("content_table_body").appendChild(tr);
-    }
 
+    }
+    $('td').click(function(){
+        alert($(self.text()))
+
+    })
 }
 
 function clearContent() {

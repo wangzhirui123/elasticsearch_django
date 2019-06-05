@@ -36,7 +36,8 @@ def results_data(req):
     key_word = req.GET.get('q','')
 
     response = Clent.search(
-        index='yucai',
+        index='yuncai',
+        doc_type='labor',
         body={
             "query":{
                 "multi_match":{
